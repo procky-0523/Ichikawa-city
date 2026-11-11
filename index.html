@@ -21,16 +21,16 @@
         header {
             background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
             color: #ffffff;
-            padding: 70px 20px;
+            padding: 60px 20px;
             text-align: center;
         }
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             letter-spacing: 2px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         header p {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             opacity: 0.95;
             max-width: 600px;
             margin: 0 auto;
@@ -54,7 +54,7 @@
             display: block;
             color: #ffffff;
             text-decoration: none;
-            padding: 16px 20px;
+            padding: 15px 20px;
             font-size: 0.95rem;
             font-weight: bold;
             transition: 0.2s;
@@ -65,7 +65,7 @@
 
         /* メイン枠 */
         .container {
-            max-width: 1000px;
+            max-width: 1080px;
             margin: 40px auto;
             padding: 0 20px;
         }
@@ -73,21 +73,21 @@
         section {
             background: #ffffff;
             border-radius: 12px;
-            padding: 40px;
-            margin-bottom: 40px;
+            padding: 35px;
+            margin-bottom: 35px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.04);
         }
 
         h2 {
-            font-size: 1.6rem;
+            font-size: 1.55rem;
             color: #0f2027;
             border-left: 6px solid #203a43;
             padding-left: 15px;
-            margin-bottom: 25px;
+            margin-bottom: 22px;
         }
 
         h3 {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: #203a43;
             margin: 25px 0 12px 0;
             border-bottom: 1px solid #e1e8ed;
@@ -95,9 +95,9 @@
         }
 
         p {
-            margin-bottom: 18px;
+            margin-bottom: 16px;
             text-align: justify;
-            font-size: 1rem;
+            font-size: 0.98rem;
         }
 
         /* ハイライトボックス */
@@ -113,11 +113,11 @@
             margin-bottom: 8px;
         }
 
-        /* 画像カードグリッド */
+        /* 画像カードグリッド（横3列でキレイに配置） */
         .card-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
             margin-top: 25px;
         }
 
@@ -126,6 +126,8 @@
             border-radius: 10px;
             overflow: hidden;
             background: #ffffff;
+            display: flex;
+            flex-direction: column;
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
@@ -136,25 +138,36 @@
 
         .card img {
             width: 100%;
-            height: 210px;
+            height: 180px;
             object-fit: cover;
             display: block;
         }
 
         .card-body {
-            padding: 22px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .card-body h4 {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: #0f2027;
             margin-bottom: 10px;
         }
 
         .card-body p {
-            font-size: 0.93rem;
+            font-size: 0.9rem;
             color: #555555;
             margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        /* スマホ向け縦並び調整 */
+        @media (max-width: 800px) {
+            .card-container {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* 表スタイル */
@@ -166,7 +179,7 @@
 
         th, td {
             border: 1px solid #dce3e9;
-            padding: 15px;
+            padding: 14px;
             text-align: left;
             font-size: 0.95rem;
         }
@@ -232,34 +245,34 @@
             <p>明治から昭和にかけては、その静かで豊かな自然環境が多くの文化人に愛されました。永井荷風、夏目漱石、幸田露伴、北原白秋といった日本を代表する文豪たちが市川に居を構え、多くの優れた文学作品を書き残しています。現在でも「市川文学散歩道」などが整備されており、文学の香りを感じながら散策を楽しむことができます。</p>
         </section>
 
-        <!-- 観光スポット（正しい画像割り当て） -->
+        <!-- 観光スポット（配置・画像一致修正済み） -->
         <section id="spots">
             <h2>注目の観光・散策スポット</h2>
             <p>市川市内には、都市の絶景から歴史的な名所まで、多様なおすすめスポットが存在します。</p>
 
             <div class="card-container">
                 
-                <!-- 1枚目：アイ・リンクタウン（夜景画像） -->
+                <!-- 1. アイ・リンクタウン（夜景画像） -->
                 <div class="card">
-                    <img src="無題 - 2026年11月11日 08.39.48.jpeg" alt="アイ・リンクタウン展望施設からの夜景">
+                    <img src="無題 - 2026年11月11日 08.38.32.jpeg" alt="アイ・リンクタウン展望施設からの夜景">
                     <div class="card-body">
                         <h4>アイ・リンクタウン展望施設</h4>
                         <p>JR市川駅直結のタワーマンション最上階（45階）にある展望デッキ。地上約150mから見渡す360度の大パノラマは絶景で、富士山や東京スカイツリー、都心の高層ビル群を一望できます。</p>
                     </div>
                 </div>
 
-                <!-- 2枚目：真間山弘法寺 & 里見公園（庭園画像） -->
+                <!-- 2. 真間山弘法寺 & 里見公園（庭園画像） -->
                 <div class="card">
-                    <img src="無題 - 2026年11月11日 08.40.37.jpeg" alt="市川の歴史と自然を感じる庭園・寺社">
+                    <img src="無題 - 2026年11月11日 08.39.48.jpeg" alt="市川の歴史と自然を感じる庭園・寺社">
                     <div class="card-body">
                         <h4>真間山弘法寺 & 里見公園</h4>
                         <p>奈良時代創建の歴史を誇る「真間山弘法寺（ぐほうじ）」や、旧国府の城跡に造られた「里見公園」。春には樹齢数百年のしだれ桜やバラ園が咲き誇り、四季折々の表情を楽しめます。</p>
                     </div>
                 </div>
 
-                <!-- 3枚目：ブランド特産品（梨画像） -->
+                <!-- 3. ブランド特産品「市川の梨」（梨画像） -->
                 <div class="card">
-                    <img src="無題 - 2026年11月11日 08.38.32.jpeg" alt="ブランド特産品の市川の梨">
+                    <img src="無題 - 2026年11月11日 08.40.37.jpeg" alt="ブランド特産品の市川の梨">
                     <div class="card-body">
                         <h4>ブランド特産品「市川の梨」</h4>
                         <p>市川市は千葉県内でも有数の梨の産地。江戸時代から続く技術と恵まれた土壌で育てられた梨は、シャキッとした食感と甘い果汁が特徴で、全国的な人気を誇ります。</p>
