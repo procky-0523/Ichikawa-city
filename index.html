@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>市川市 公式ガイド | 都心に近く歴史と緑が広がる街</title>
+    <title>市川市 公式総合ガイド | 歴史・自然・文化が調和する街</title>
     <style>
         * {
             box-sizing: border-box;
@@ -14,33 +14,35 @@
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", メイリオ, sans-serif;
             line-height: 1.8;
             color: #2b2b2b;
-            background-color: #f7f9fa;
+            background-color: #f4f6f8;
         }
 
         /* ヘッダー */
         header {
-            background: linear-gradient(135deg, #16325c 0%, #2a5298 100%);
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
             color: #ffffff;
-            padding: 60px 20px;
+            padding: 70px 20px;
             text-align: center;
         }
         header h1 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             letter-spacing: 2px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         header p {
-            font-size: 1.05rem;
-            opacity: 0.9;
+            font-size: 1.1rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         /* ナビゲーション */
         nav {
-            background-color: #0d233a;
+            background-color: #112233;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
         }
         nav ul {
             display: flex;
@@ -52,89 +54,105 @@
             display: block;
             color: #ffffff;
             text-decoration: none;
-            padding: 15px 22px;
+            padding: 16px 20px;
             font-size: 0.95rem;
             font-weight: bold;
             transition: 0.2s;
         }
         nav li a:hover {
-            background-color: #1e4273;
+            background-color: #2c5364;
         }
 
         /* メイン枠 */
         .container {
-            max-width: 980px;
+            max-width: 1000px;
             margin: 40px auto;
             padding: 0 20px;
         }
 
         section {
             background: #ffffff;
-            border-radius: 10px;
-            padding: 35px;
-            margin-bottom: 35px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
         }
 
         h2 {
-            font-size: 1.55rem;
-            color: #16325c;
-            border-bottom: 3px solid #2a5298;
-            padding-bottom: 8px;
-            margin-bottom: 22px;
+            font-size: 1.6rem;
+            color: #0f2027;
+            border-left: 6px solid #203a43;
+            padding-left: 15px;
+            margin-bottom: 25px;
         }
 
         h3 {
-            font-size: 1.2rem;
-            color: #1e4273;
-            margin: 22px 0 10px 0;
+            font-size: 1.25rem;
+            color: #203a43;
+            margin: 25px 0 12px 0;
+            border-bottom: 1px solid #e1e8ed;
+            padding-bottom: 5px;
         }
 
         p {
-            margin-bottom: 15px;
+            margin-bottom: 18px;
             text-align: justify;
+            font-size: 1rem;
+        }
+
+        /* ハイライトボックス */
+        .highlight-box {
+            background-color: #f0f4f8;
+            border-left: 4px solid #2c5364;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .highlight-box h4 {
+            color: #0f2027;
+            margin-bottom: 8px;
         }
 
         /* 画像カードグリッド */
         .card-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-            gap: 22px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
             margin-top: 25px;
         }
 
         .card {
             border: 1px solid #e1e8ed;
-            border-radius: 8px;
+            border-radius: 10px;
             overflow: hidden;
             background: #ffffff;
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
         .card img {
             width: 100%;
-            height: 200px;
+            height: 210px;
             object-fit: cover;
             display: block;
         }
 
         .card-body {
-            padding: 20px;
+            padding: 22px;
         }
 
         .card-body h4 {
-            font-size: 1.15rem;
-            color: #16325c;
-            margin-bottom: 8px;
+            font-size: 1.2rem;
+            color: #0f2027;
+            margin-bottom: 10px;
         }
 
         .card-body p {
-            font-size: 0.92rem;
+            font-size: 0.93rem;
             color: #555555;
             margin-bottom: 0;
         }
@@ -143,52 +161,53 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
         th, td {
             border: 1px solid #dce3e9;
-            padding: 14px;
+            padding: 15px;
             text-align: left;
             font-size: 0.95rem;
         }
 
         th {
-            background-color: #f0f4f8;
-            color: #16325c;
-            width: 30%;
+            background-color: #eef2f5;
+            color: #0f2027;
+            width: 25%;
             font-weight: bold;
         }
 
         /* フッター */
         footer {
-            background-color: #16325c;
+            background-color: #0f2027;
             color: #ffffff;
             text-align: center;
-            padding: 30px;
-            font-size: 0.85rem;
-            margin-top: 50px;
+            padding: 35px 20px;
+            font-size: 0.9rem;
+            margin-top: 60px;
         }
         footer p.note {
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             opacity: 0.7;
-            margin-top: 8px;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>千葉県 市川市</h1>
-        <p>都心に最も近く、歴史と豊かな自然が息づく街</p>
+        <h1>千葉県 市川市 公式ガイド</h1>
+        <p>〜 都心に最も近く、万葉の歴史と豊かな緑が交差する街 〜</p>
     </header>
 
     <nav>
         <ul>
             <li><a href="#about">市川市の概要</a></li>
+            <li><a href="#history">歴史と文化</a></li>
             <li><a href="#spots">見どころスポット</a></li>
-            <li><a href="#gourmet">特産品・名物</a></li>
-            <li><a href="#access">アクセス</a></li>
+            <li><a href="#gourmet">特産・名物</a></li>
+            <li><a href="#access">交通アクセス</a></li>
         </ul>
     </nav>
 
@@ -197,75 +216,90 @@
         <!-- 概要 -->
         <section id="about">
             <h2>市川市ってどんな街？</h2>
-            <p>千葉県の北西部に位置する市川市は、江戸川を挟んで東京都江戸川区や葛飾区と隣接しており、都心へすぐ出られる交通の利便性が大きな特徴です。通勤・通学に非常に便利なベッドタウンとして発展し続けています。</p>
-            <p>また、古くは『万葉集』にも登場する歴史ある地域で、夏目漱石や永井荷風をはじめとする数多くの文豪が暮らした「文教都市」としても知られています。高層ビルが立ち並ぶ駅前エリアから、四季折々の花々や歴史的な寺社が残る静かな緑地まで、多様な魅力が詰まっています。</p>
+            <p>千葉県の北西部に位置する市川市は、旧江戸川・江戸川を隔てて東京都（江戸川区・葛飾区）に隣接する、人口約49万人を擁する千葉県有数の主要都市です。都心への交通アクセスが極めて良好でありながら、河川敷の開放的な景観や緑豊かな樹林地が広がり、快適な居住環境が整っています。</p>
+            <p>市内は大きく分けて、高層マンションや商業施設が立ち並ぶ「市川・本八幡エリア」、歴史的建造物や閑静な住宅街が広がる「北部エリア」、そして伝統的な街並みやベイエリアの顔を持つ「行徳・妙典エリア」の3つに分類され、地域ごとに多彩な魅力を持っています。</p>
+
+            <div class="highlight-box">
+                <h4>文教都市としての魅力</h4>
+                <p style="margin-bottom:0;">市川市は数多くの小中学校・高校・大学が集積する学園都市でもあります。教育環境の充実度に惹かれて移住するファミリー層も多く、落ち着いた住環境が形成されています。</p>
+            </div>
         </section>
 
-        <!-- 観光スポット（画像付きカード） -->
+        <!-- 歴史と文化 -->
+        <section id="history">
+            <h2>万葉の時代から続く歴史と文豪たち</h2>
+            <p>市川市の歴史は古く、『万葉集』に登場する「手児奈（てこな）伝説」の舞台としても有名です。奈良時代には下総国の国府（政治の中心地）が置かれ、古代から関東の要所として栄えてきました。</p>
+            <p>明治から昭和にかけては、その静かで豊かな自然環境が多くの文化人に愛されました。永井荷風、夏目漱石、幸田露伴、北原白秋といった日本を代表する文豪たちが市川に居を構え、多くの優れた文学作品を書き残しています。現在でも「市川文学散歩道」などが整備されており、文学の香りを感じながら散策を楽しむことができます。</p>
+        </section>
+
+        <!-- 観光スポット（画像カード：正しい対応関係に修正） -->
         <section id="spots">
             <h2>注目の観光・散策スポット</h2>
-            <p>市川市内で特に人気の高い代表的なスポットをご紹介します。</p>
+            <p>市川市内には、都市の絶景から歴史的な名所まで、多様なおすすめスポットが存在します。</p>
 
             <div class="card-container">
                 
-                <div class="card">
-                    <img src="無題 - 2026年11月11日 08.38.32.jpeg" alt="特産品の市川の梨">
-                    <div class="card-body">
-                        <h4>特産品「市川の梨」</h4>
-                        <p>市川市は千葉県内でも有数の梨の産地。シャキシャキとした食感と甘くジューシーな果汁が特徴で、夏から秋にかけて直売所が大いに賑わいます。</p>
-                    </div>
-                </div>
-
+                <!-- 1枚目：夜景 ➔ アイ・リンクタウン -->
                 <div class="card">
                     <img src="無題 - 2026年11月11日 08.39.48.jpeg" alt="アイ・リンクタウン展望施設からの夜景">
                     <div class="card-body">
                         <h4>アイ・リンクタウン展望施設</h4>
-                        <p>JR市川駅直結のタワーマンション最上階（45階）にある展望デッキ。地上約150mから見渡す360度の大パノラマは絶景で、富士山や都心の夜景を一望できます。</p>
+                        <p>JR市川駅直結のタワーマンション最上階（45階）にある展望デッキ。地上約150mから見渡す360度の大パノラマは絶景で、富士山や東京スカイツリー、都心の高層ビル群を一望できます。</p>
                     </div>
                 </div>
 
+                <!-- 2枚目：庭園 ➔ 寺社・歴史スポット -->
                 <div class="card">
                     <img src="無題 - 2026年11月11日 08.40.37.jpeg" alt="市川の歴史と自然を感じる庭園・寺社">
                     <div class="card-body">
-                        <h4>歴史香る寺社と緑豊かな公園</h4>
-                        <p>奈良時代創建と伝わる真間山弘法寺や、春の桜や秋の紅葉が美しい里見公園など、市内には豊かな自然と歴史を感じられる散策スポットが満載です。</p>
+                        <h4>真間山弘法寺 & 里見公園</h4>
+                        <p>奈良時代創建の歴史を誇る「真間山弘法寺（ぐほうじ）」や、旧国府の城跡に造られた「里見公園」。春には樹齢数百年のしだれ桜やバラ園が咲き誇り、四季折々の表情を楽しめます。</p>
+                    </div>
+                </div>
+
+                <!-- 3枚目：梨 ➔ 市川の梨 -->
+                <div class="card">
+                    <img src="無題 - 2026年11月11日 08.38.32.jpeg" alt="ブランド特産品の市川の梨">
+                    <div class="card-body">
+                        <h4>ブランド特産品「市川の梨」</h4>
+                        <p>市川市は千葉県内でも有数の梨の産地。江戸時代から続く技術と恵まれた土壌で育てられた梨は、シャキッとした食感と甘い果汁が特徴で、全国的な人気を誇ります。</p>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- 特産品・文化 -->
+        <!-- 特産品・伝統文化 -->
         <section id="gourmet">
-            <h2>市川市の名産品と伝統文化</h2>
-            <h3>全国的ブランド「市川の梨」</h3>
-            <p>江戸時代から続く栽培の歴史を持つ「市川の梨」は、味の良さと品質の高さで全国的に有名です。「幸水」「豊水」「新高」など、時期に合わせて旬の品種を楽しむことができます。</p>
+            <h2>市川市の名産品と伝統工芸</h2>
+            <h3>「市川の梨」の品種と旬</h3>
+            <p>市川の梨は、時期によって異なる品種を楽しめるのが大きな魅力です。8月上旬から収穫が始まる瑞々しい「幸水（こうすい）」、甘みと酸味のバランスが良い「豊水（ほうすい）」、そして大ぶりでジューシーな「新高（にいたか）」と、秋口まで長く楽しむことができます。シーズン中は国道464号線沿い（大町梨街道）に数多くの直売所が立ち並びます。</p>
             
-            <h3>行徳の神輿（みこし）づくり</h3>
-            <p>南部エリアの行徳地区は古くから「神輿の街」として知られ、職人の細やかな技が光る伝統工芸が現在まで受け継がれています。</p>
+            <h3>行徳の神輿（みこし）制作</h3>
+            <p>南部エリアの行徳地区は、江戸時代から続く「神輿づくりの街」として全国にその名を知られています。職人の繊細な木工技術と漆塗り、金箔押しの技術が結集された行徳神輿は、関東一円の神社に納められており、文化財的価値も高く評価されています。</p>
         </section>
 
         <!-- アクセス -->
         <section id="access">
-            <h2>主要路線とアクセス情報</h2>
-            <p>市川市は複数の鉄道網が整備されており、都心や各方面へのアクセスが抜群です。</p>
+            <h2>主要路線と交通アクセス</h2>
+            <p>市川市は都心へダイレクトにアクセスできる鉄道路線網が非常に充実しています。</p>
 
             <table>
                 <tr>
-                    <th>JR総武線（快速）</th>
-                    <td>市川駅から東京駅まで 直通約18分</td>
+                    <th>JR総武線（快速・各駅）</th>
+                    <td>市川駅から東京駅まで直通約18分。秋葉原・新宿方面へも本本数多数。</td>
                 </tr>
                 <tr>
                     <th>都営新宿線</th>
-                    <td>本八幡駅から新宿駅まで 直通約30分</td>
+                    <td>本八幡駅が始発駅。新宿駅まで直通約30分で確実に座って通勤可能。</td>
                 </tr>
                 <tr>
                     <th>東京メトロ東西線</th>
-                    <td>妙典駅・行徳駅から大手町駅まで 約25分</td>
+                    <td>妙典駅・行徳駅から大手町駅まで約25分。日本橋・大手町へのアクセスに最適。</td>
                 </tr>
                 <tr>
                     <th>京成本線</th>
-                    <td>京成八幡駅から上野駅・成田空港方面へアクセス可能</td>
+                    <td>国府台・京成八幡・鬼越など。上野方面や成田空港へのアクセスに便利。</td>
                 </tr>
             </table>
         </section>
@@ -273,7 +307,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 市川市Webガイド - 授業課題提出用サイト</p>
+        <p>&copy; 2026 市川市Webガイド - 学校授業課題提出用WEBサイト</p>
         <p class="note">※本サイトに掲載している画像は、Adobe Expressを用いて市川市のイメージを表現した制作用アセットです。</p>
     </footer>
 
