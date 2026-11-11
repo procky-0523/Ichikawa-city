@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>市川市 総合案内ポータル | 歴史・自然・文化が調和する街</title>
+    <title>市川市 街の魅力と総合案内ガイド | 都心に近く歴史と自然が息づく街</title>
     <style>
         * {
             box-sizing: border-box;
@@ -12,7 +12,7 @@
         }
         body {
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", メイリオ, sans-serif;
-            line-height: 1.8;
+            line-height: 1.85;
             color: #2b2b2b;
             background-color: #f4f6f8;
         }
@@ -21,18 +21,18 @@
         header {
             background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
             color: #ffffff;
-            padding: 60px 20px;
+            padding: 65px 20px;
             text-align: center;
         }
         header h1 {
-            font-size: 2.2rem;
+            font-size: 2.3rem;
             letter-spacing: 2px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         header p {
             font-size: 1.05rem;
-            opacity: 0.95;
-            max-width: 600px;
+            opacity: 0.92;
+            max-width: 680px;
             margin: 0 auto;
         }
 
@@ -54,8 +54,8 @@
             display: block;
             color: #ffffff;
             text-decoration: none;
-            padding: 15px 20px;
-            font-size: 0.95rem;
+            padding: 15px 18px;
+            font-size: 0.92rem;
             font-weight: bold;
             transition: 0.2s;
         }
@@ -63,7 +63,7 @@
             background-color: #2c5364;
         }
 
-        /* メイン枠 */
+        /* コンテナ */
         .container {
             max-width: 1080px;
             margin: 40px auto;
@@ -73,13 +73,13 @@
         section {
             background: #ffffff;
             border-radius: 12px;
-            padding: 35px;
-            margin-bottom: 35px;
+            padding: 38px;
+            margin-bottom: 38px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.04);
         }
 
         h2 {
-            font-size: 1.55rem;
+            font-size: 1.6rem;
             color: #0f2027;
             border-left: 6px solid #203a43;
             padding-left: 15px;
@@ -87,11 +87,11 @@
         }
 
         h3 {
-            font-size: 1.2rem;
+            font-size: 1.22rem;
             color: #203a43;
             margin: 25px 0 12px 0;
-            border-bottom: 1px solid #e1e8ed;
-            padding-bottom: 5px;
+            border-bottom: 2px solid #eef2f5;
+            padding-bottom: 6px;
         }
 
         p {
@@ -104,13 +104,14 @@
         .highlight-box {
             background-color: #f0f4f8;
             border-left: 4px solid #2c5364;
-            padding: 20px;
-            margin: 20px 0;
+            padding: 20px 22px;
+            margin: 22px 0;
             border-radius: 0 8px 8px 0;
         }
         .highlight-box h4 {
             color: #0f2027;
             margin-bottom: 8px;
+            font-size: 1.05rem;
         }
 
         /* 画像カードグリッド */
@@ -138,7 +139,7 @@
 
         .card img {
             width: 100%;
-            height: 180px;
+            height: 185px;
             object-fit: cover;
             display: block;
         }
@@ -163,11 +164,50 @@
             line-height: 1.6;
         }
 
-        /* スマホ向け縦並び調整 */
-        @media (max-width: 800px) {
-            .card-container {
-                grid-template-columns: 1fr;
-            }
+        /* 四季のイベントグリッド */
+        .season-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 20px;
+        }
+        .season-item {
+            background: #f9fbfe;
+            border: 1px solid #e1e8ed;
+            padding: 18px;
+            border-radius: 8px;
+        }
+        .season-item h4 {
+            color: #203a43;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+        }
+
+        /* モデルコースタイムライン */
+        .timeline {
+            margin-top: 20px;
+            border-left: 3px solid #2c5364;
+            padding-left: 20px;
+            list-style: none;
+        }
+        .timeline-item {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -28px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #2c5364;
+        }
+        .timeline-time {
+            font-weight: bold;
+            color: #203a43;
+            font-size: 0.95rem;
         }
 
         /* 表スタイル */
@@ -179,7 +219,7 @@
 
         th, td {
             border: 1px solid #dce3e9;
-            padding: 14px;
+            padding: 14px 16px;
             text-align: left;
             font-size: 0.95rem;
         }
@@ -187,8 +227,18 @@
         th {
             background-color: #eef2f5;
             color: #0f2027;
-            width: 25%;
+            width: 28%;
             font-weight: bold;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 800px) {
+            .card-container, .season-grid {
+                grid-template-columns: 1fr;
+            }
+            th {
+                width: 35%;
+            }
         }
 
         /* フッター */
@@ -196,7 +246,7 @@
             background-color: #0f2027;
             color: #ffffff;
             text-align: center;
-            padding: 35px 20px;
+            padding: 38px 20px;
             font-size: 0.9rem;
             margin-top: 60px;
         }
@@ -218,9 +268,11 @@
         <ul>
             <li><a href="#about">市川市の概要</a></li>
             <li><a href="#history">歴史と文化</a></li>
-            <li><a href="#spots">見どころスポット</a></li>
-            <li><a href="#gourmet">特産・名物</a></li>
-            <li><a href="#access">交通アクセス</a></li>
+            <li><a href="#spots">注目のスポット</a></li>
+            <li><a href="#course">散策モデルコース</a></li>
+            <li><a href="#seasons">四季の風物詩</a></li>
+            <li><a href="#gourmet">特産品・名物</a></li>
+            <li><a href="#access">交通と住みやすさ</a></li>
         </ul>
     </nav>
 
@@ -229,92 +281,168 @@
         <!-- 概要 -->
         <section id="about">
             <h2>市川市ってどんな街？</h2>
-            <p>千葉県の北西部に位置する市川市は、旧江戸川・江戸川を隔てて東京都（江戸川区・葛飾区）に隣接する、人口約49万人を擁する千葉県有数の主要都市です。都心への交通アクセスが極めて良好でありながら、河川敷の開放的な景観や緑豊かな樹林地が広がり、快適な居住環境が整っています。</p>
-            <p>市内は大きく分けて、高層マンションや商業施設が立ち並ぶ「市川・本八幡エリア」、歴史的建造物や閑静な住宅街が広がる「北部エリア」、そして伝統的な街並みやベイエリアの顔を持つ「行徳・妙典エリア」の3つに分類され、地域ごとに多彩な魅力を持っています。</p>
+            <p>千葉県の北西部に位置する市川市は、旧江戸川および江戸川を挟んで東京都（江戸川区・葛飾区）と隣接する、人口約49万人を有する千葉県有数の主要都市です。東京駅からわずか15〜20分圏内という抜群の交通アクセスを誇りながら、水と緑に恵まれた静かで心地よい居住環境が広がっています。</p>
+            <p>市域は南北に細長く、地域ごとに異なる個性と魅力を備えています。高層ビルや商業施設が賑わう「市川・本八幡エリア」、歴史的寺社や学園都市の落ち着きを持つ「北部エリア」、そして江戸時代からの伝統文化やベイエリアの近代的な街並みが広がる「行徳・妙典エリア」など、訪れる場所によって多様な表情を楽しむことができます。</p>
 
             <div class="highlight-box">
-                <h4>文教都市としての魅力</h4>
-                <p style="margin-bottom:0;">市川市は数多くの小中学校・高校・大学が集積する学園都市でもあります。教育環境の充実度に惹かれて移住するファミリー層も多く、落ち着いた住環境が形成されています。</p>
+                <h4>データで見る市川市の基本情報</h4>
+                <table>
+                    <tr>
+                        <th>人口・世帯数</th>
+                        <td>約496,000人 / 約250,000世帯（千葉県内第3位の人口規模）</td>
+                    </tr>
+                    <tr>
+                        <th>位置・隣接自治体</th>
+                        <td>千葉県北西部 / 東京都（江戸川区・葛飾区）、船橋市、松戸市、鎌ケ谷市、浦安市</td>
+                    </tr>
+                    <tr>
+                        <th>主な地域区分</th>
+                        <td>市川・本八幡エリア、北部歴史自然エリア、行徳・妙典ベイエリア</td>
+                    </tr>
+                    <tr>
+                        <th>街の主な特色</th>
+                        <td>文教都市、万葉の歴史拠点、全国有数の「市川の梨」産地、行徳神輿の伝統工芸</td>
+                    </tr>
+                </table>
             </div>
         </section>
 
         <!-- 歴史と文化 -->
         <section id="history">
-            <h2>万葉の時代から続く歴史と文豪たち</h2>
-            <p>市川市の歴史は古く、『万葉集』に登場する「手児奈（てこな）伝説」の舞台としても有名です。奈良時代には下総国の国府（政治の中心地）が置かれ、古代から関東の要所として栄えてきました。</p>
-            <p>明治から昭和にかけては、その静かで豊かな自然環境が多くの文化人に愛されました。永井荷風、夏目漱石、幸田露伴、北原白秋といった日本を代表する文豪たちが市川に居を構え、多くの優れた文学作品を書き残しています。現在でも「市川文学散歩道」などが整備されており、文学の香りを感じながら散策を楽しむことができます。</p>
+            <h2>万葉の古代から続く歴史と文豪たち</h2>
+            <p>市川市の歴史はきわめて古く、日本最古の歌集である『万葉集』にも「真間の手児奈（てこな）伝説」としてその名が刻まれています。奈良時代には下総国（現在の千葉県北部や茨城県一部）の国府（政治・文化の中心地）や国分寺が置かれ、古代から関東地方の重要拠点として栄えてきました。</p>
+            <p>明治から昭和時代にかけては、その静寂で風光明媚な環境が多くの知識人や文化人に愛されました。永井荷風、夏目漱石、幸田露伴、北原白秋、郭沫若といった日本を代表する文豪・文人が市川の地に居を構え、多くの名作を執筆しました。現在でも市内各地に「市川文学散歩道」や説明板が設置されており、歴史と文学の残り香を感じながら街を歩くことができます。</p>
         </section>
 
-        <!-- 観光スポット -->
+        <!-- 観光スポット（正しい画像ファイルの割り当て） -->
         <section id="spots">
             <h2>注目の観光・散策スポット</h2>
-            <p>市川市内には、都市の絶景から歴史的な名所まで、多様なおすすめスポットが存在します。</p>
+            <p>都市の絶景から歴史的建造物、豊かな自然まで、市川市内のおすすめスポットをご紹介します。</p>
 
             <div class="card-container">
                 
-                <!-- 1. アイ・リンクタウン -->
+                <!-- 1. アイ・リンクタウン（夜景画像: 08.40.37.jpeg） -->
                 <div class="card">
-                    <img src="無題 - 2026年11月11日 08.38.32.jpeg" alt="アイ・リンクタウン展望施設からの夜景">
+                    <img src="無題 - 2026年11月11日 08.40.37.jpeg" alt="アイ・リンクタウン展望施設からの夜景">
                     <div class="card-body">
                         <h4>アイ・リンクタウン展望施設</h4>
-                        <p>JR市川駅直結のタワーマンション最上階（45階）にある展望デッキ。地上約150mから見渡す360度の大パノラマは絶景で、富士山や東京スカイツリー、都心の高層ビル群を一望できます。</p>
+                        <p>JR市川駅直結のタワーマンション最上階（45階）にある展望デッキ。地上約150mから見渡す360度の大パノラマは壮観で、富士山や東京スカイツリー、都心の夜景を一望できる人気絶景スポットです。</p>
                     </div>
                 </div>
 
-                <!-- 2. 真間山弘法寺 & 里見公園 -->
+                <!-- 2. 真間山弘法寺 & 里見公園（庭園画像: 08.38.32.jpeg） -->
                 <div class="card">
-                    <img src="無題 - 2026年11月11日 08.39.48.jpeg" alt="市川の歴史と自然を感じる庭園・寺社">
+                    <img src="無題 - 2026年11月11日 08.38.32.jpeg" alt="市川の歴史と自然を感じる庭園・寺社">
                     <div class="card-body">
                         <h4>真間山弘法寺 & 里見公園</h4>
-                        <p>奈良時代創建の歴史を誇る「真間山弘法寺（ぐほうじ）」や、旧国府の城跡に造られた「里見公園」。春には樹齢数百年のしだれ桜やバラ園が咲き誇り、四季折々の表情を楽しめます。</p>
+                        <p>奈良時代創建と伝わる古刹「真間山弘法寺（ぐほうじ）」や、高台の城跡に造られた「里見公園」。樹齢数百年のしだれ桜や綺麗な庭園、秋の紅葉など、四季折々の自然と歴史情緒を満喫できます。</p>
                     </div>
                 </div>
 
-                <!-- 3. ブランド特産品「市川の梨」 -->
+                <!-- 3. ブランド特産品「市川の梨」（梨画像: 08.39.48.jpeg） -->
                 <div class="card">
-                    <img src="無題 - 2026年11月11日 08.40.37.jpeg" alt="ブランド特産品の市川の梨">
+                    <img src="無題 - 2026年11月11日 08.39.48.jpeg" alt="ブランド特産品の市川の梨">
                     <div class="card-body">
                         <h4>ブランド特産品「市川の梨」</h4>
-                        <p>市川市は千葉県内でも有数の梨の産地。江戸時代から続く技術と恵まれた土壌で育てられた梨は、シャキッとした食感と甘い果汁が特徴で、全国的な人気を誇ります。</p>
+                        <p>市川市は千葉県内でもトップクラスの産出量を誇る梨の街。江戸時代から続く栽培技術と恵まれた土壌で育った梨は、みずみずしく甘い果汁が特徴で、全国的な人気を集めています。</p>
                     </div>
                 </div>
 
+            </div>
+        </section>
+
+        <!-- 1日散策モデルコース -->
+        <section id="course">
+            <h2>市川の魅力満載！おすすめ1日散策モデルコース</h2>
+            <p>市川市の歴史・自然・絶景を1日で無理なく巡るおすすめの散策ルートです。</p>
+
+            <ul class="timeline">
+                <li class="timeline-item">
+                    <div class="timeline-time">10:00 AM — JR市川駅・京成国府台駅 出発</div>
+                    <p>散策スタート。まずは北部の歴史散策エリアへ向かいます。</p>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-time">10:30 AM — 真間山弘法寺・手児奈霊堂 拝観</div>
+                    <p>万葉集の舞台となった真間の地を散策。石段を上り、立派な本堂や樹齢を重ねた樹木を鑑賞します。</p>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-time">12:00 PM — 里見公園でランチ＆散策</div>
+                    <p>江戸川を見下ろす高台にある公園。お弁当を食べたり、季節の花々（春の桜・初夏のバラ）をのんびり鑑賞します。</p>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-time">03:00 PM — 本八幡エリアでカフェ＆お買い物</div>
+                    <p>本八幡へ移動し、文豪ゆかりの地やカフェでひと休み。市川市役所周辺の賑やかな街並みを散歩します。</p>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-time">05:30 PM — アイ・リンクタウン展望施設で夕景・夜景観賞</div>
+                    <p>市川駅へ戻り、45階の展望デッキへ。日没に合わせて富士山のシルエットや東京の綺麗な夜景を堪能して締めくくります。</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 四季の風物詩 -->
+        <section id="seasons">
+            <h2>四季折々の風物詩とイベント</h2>
+            <p>一年を通じて豊かな自然と文化イベントが街を彩ります。</p>
+
+            <div class="season-grid">
+                <div class="season-item">
+                    <h4>🌸 春（3月〜5月）</h4>
+                    <p>里見公園や真間川沿いの桜並木が見頃を迎え、お花見客で賑わいます。5月には里見公園で「バラまつり」が開催されます。</p>
+                </div>
+                <div class="season-item">
+                    <h4>🎆 夏（6月〜8月）</h4>
+                    <p>江戸川河川敷で開催される「市川市民納涼花火大会」は夏の風物詩。対岸の江戸川区花火大会と合同で打ち上げられる大迫力の花火は必見です。</p>
+                </div>
+                <div class="season-item">
+                    <h4>🍐 秋（9月〜11月）</h4>
+                    <p>梨の収穫が最盛期を迎え、「大町梨街道」沿いの直売所が賑わいます。秋深まると旧国分寺跡や各寺院で美しい紅葉を楽しめます。</p>
+                </div>
+                <div class="season-item">
+                    <h4>❄️ 冬（12月〜2月）</h4>
+                    <p>空気の澄んだ冬は、アイ・リンクタウン展望施設から富士山や東京スカイツリーが一年で最もくっきりと美しく見えます。</p>
+                </div>
             </div>
         </section>
 
         <!-- 特産品・伝統文化 -->
         <section id="gourmet">
             <h2>市川市の名産品と伝統工芸</h2>
-            <h3>「市川の梨」の品種と旬</h3>
-            <p>市川の梨は、時期によって異なる品種を楽しめるのが大きな魅力です。8月上旬から収穫が始まる瑞々しい「幸水（こうすい）」、甘みと酸味のバランスが良い「豊水（ほうすい）」、そして大ぶりでジューシーな「新高（にいたか）」と、秋口まで長く楽しむことができます。シーズン中は国道464号線沿い（大町梨街道）に数多くの直売所が立ち並びます。</p>
+            <h3>全国ブランド「市川の梨」</h3>
+            <p>市川市の梨栽培は江戸時代に始まったとされ、200年以上の伝統を誇ります。8月上旬の瑞々しい「幸水（こうすい）」から始まり、甘みと酸味のバランスが良い「豊水（ほうすい）」、大ぶりで芳醇な「新高（にいたか）」まで、長期間にわたって旬の味を楽しめます。市内の直売所や果樹園には市外からも多くのファンが訪れます。</p>
             
-            <h3>行徳の神輿（みこし）制作</h3>
-            <p>南部エリアの行徳地区は、江戸時代から続く「神輿づくりの街」として全国にその名を知られています。職人の繊細な木工技術と漆塗り、金箔押しの技術が結集された行徳神輿は、関東一円の神社に納められており、文化財的価値も高く評価されています。</p>
+            <h3>伝統の技「行徳の神輿（みこし）制作」</h3>
+            <p>市川市南部の行徳地区は、江戸時代から「神輿づくりの街」として全国に名を馳せてきました。木工、漆塗り、金箔押し、錺（かざり）金具など、熟練職人の手仕事が集結して作られる行徳神輿は文化財としての価値も高く、日本全国の有名神社に納められています。</p>
         </section>
 
-        <!-- アクセス -->
+        <!-- アクセスと住みやすさ -->
         <section id="access">
-            <h2>主要路線と交通アクセス</h2>
-            <p>市川市は都心へダイレクトにアクセスできる鉄道路線網が非常に充実しています。</p>
+            <h2>主要路線と交通アクセス・住みやすさ</h2>
+            <p>市川市は都心や羽田・成田の両空港へアクセスしやすく、住みやすい街としてファミリー層や単身者に高く評価されています。</p>
 
             <table>
                 <tr>
                     <th>JR総武線（快速・各駅）</th>
-                    <td>市川駅から東京駅まで直通約18分。秋葉原・新宿方面へも本数多数。</td>
+                    <td>市川駅から東京駅まで直通約18分。秋葉原・新宿方面へも本数が多く便利です。</td>
                 </tr>
                 <tr>
                     <th>都営新宿線</th>
-                    <td>本八幡駅が始発駅。新宿駅まで直通約30分で確実に座って通勤可能。</td>
+                    <td>本八幡駅が始発駅。新宿駅まで直通約30分で、朝の通勤ラッシュ時も座って移動できます。</td>
                 </tr>
                 <tr>
                     <th>東京メトロ東西線</th>
-                    <td>妙典駅・行徳駅から大手町駅まで約25分。日本橋・大手町へのアクセスに最適。</td>
+                    <td>妙典駅・行徳駅から大手町駅まで約25分。日本橋やビジネス街への通勤に直結しています。</td>
                 </tr>
                 <tr>
                     <th>京成本線</th>
-                    <td>国府台・京成八幡・鬼越など。上野方面や成田空港へのアクセスに便利。</td>
+                    <td>国府台・京成八幡など。成田空港や上野方面へのアクセスに優れています。</td>
                 </tr>
             </table>
+
+            <div class="highlight-box">
+                <h4>文教都市・子育て環境の魅力</h4>
+                <p style="margin-bottom:0;">市内には数多くの小中学校・高校・大学（千葉商科大学、和洋女子大学など）が集積しており、教育意識の高い文教都市として知られています。また、大きな公園や河川敷など子供が伸び伸び遊べる環境が整っていることも大きな魅力です。</p>
+            </div>
         </section>
 
     </div>
